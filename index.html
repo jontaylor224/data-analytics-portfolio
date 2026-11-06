@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Jon Taylor's data analytics portfolio, featuring projects in data analysis, visualization, SQL, and machine learning.">
+  <meta name="theme-color" content="#101827">
+  <title>Jon Taylor | Data Analytics Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Jon Taylor home"><span class="brand-mark">JT</span><span>Jon
+          Taylor</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links"
+        aria-label="Toggle navigation">☰</button>
+      <div class="nav-links" id="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+        <a class="nav-cta" href="https://github.com/jontaylor224" target="_blank" rel="noopener noreferrer">GitHub <span
+            aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> DATA ANALYTICS · MACHINE LEARNING</p>
+        <h1>Turning data into <span>clearer decisions.</span></h1>
+        <p class="hero-intro">I'm Jon Taylor, a data analytics graduate who enjoys exploring complex datasets,
+          uncovering useful patterns, and communicating findings through thoughtful analysis and visualization.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">Explore my projects <span aria-hidden="true">↓</span></a>
+          <a class="button button-secondary" href="https://github.com/jontaylor224" target="_blank"
+            rel="noopener noreferrer">View GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-meta"><span>BS in Data Analytics</span><span class="meta-separator">·</span><span>United
+            States</span></div>
+      </div>
+      <div class="hero-visual" aria-label="Abstract data visualization illustration">
+        <div class="visual-topline"><span>DATA / INSIGHTS</span><span>01 — 04</span></div>
+        <div class="chart-card">
+          <div class="chart-heading">
+            <div><span class="chart-kicker">ANALYTICAL THINKING</span><strong>Find the signal</strong></div><span
+              class="chart-icon">↗</span>
+          </div>
+          <div class="bar-chart" aria-hidden="true">
+            <span style="--h:34%"></span><span style="--h:52%"></span><span style="--h:43%"></span><span
+              style="--h:72%"></span><span style="--h:61%"></span><span style="--h:88%"></span><span
+              style="--h:76%"></span><span style="--h:100%"></span><span style="--h:83%"></span>
+          </div>
+          <div class="chart-axis"><span>EXPLORE</span><span>UNDERSTAND</span><span>COMMUNICATE</span></div>
+        </div>
+        <div class="floating-note note-one"><span class="note-symbol">⌁</span><span><b>Explore</b><small>Ask better
+              questions</small></span></div>
+        <div class="floating-note note-two"><span class="note-symbol">✳</span><span><b>Explain</b><small>Make insights
+              useful</small></span></div>
+        <div class="visual-orbit orbit-one"></div>
+        <div class="visual-orbit orbit-two"></div>
+      </div>
+    </section>
+
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">SELECTED WORK</p>
+            <h2>Featured projects<span class="accent">.</span></h2>
+          </div>
+          <p class="section-description">A growing collection of projects that demonstrate my approach to exploring
+            data, building models, and presenting results.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card project-featured">
+            <div class="project-art art-census">
+              <div class="art-label">01 / PREDICTIVE ANALYTICS</div>
+              <div class="mini-dashboard">
+                <div class="mini-title">INCOME CLASSIFICATION</div>
+                <div class="mini-bars"><i></i><i></i><i></i><i></i><i></i></div>
+                <div class="mini-line"></div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-type">MACHINE LEARNING <span>·</span> PYTHON</div>
+              <h3>Census Income Prediction</h3>
+              <p>Explore demographic and employment data, develop classification models, and evaluate predictive
+                performance across data segments.</p>
+              <div class="tag-list"><span>pandas</span><span>scikit-learn</span><span>Model evaluation</span></div><span
+                class="project-status">Project write-up coming soon</span>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-art art-cluster">
+              <div class="art-label">02 / CUSTOMER INSIGHTS</div>
+              <div class="cluster-points">
+                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              </div>
+              <div class="cluster-axis"></div>
+            </div>
+            <div class="project-content">
+              <div class="project-type">UNSUPERVISED LEARNING <span>·</span> PYTHON</div>
+              <h3>Customer Segmentation</h3>
+              <p>Use clustering and dimensionality reduction to explore customer characteristics and identify meaningful
+                audience groups.</p>
+              <div class="tag-list"><span>pandas</span><span>PCA</span><span>Clustering</span></div><span
+                class="project-status">Project write-up coming soon</span>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-art art-health">
+              <div class="art-label">03 / EXPLORATORY ANALYSIS</div>
+              <div class="health-panel">
+                <div class="health-ring"><span>EDA</span></div>
+                <div class="health-lines"><i></i><i></i><i></i><i></i></div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-type">DATA ANALYSIS <span>·</span> PYTHON</div>
+              <h3>Medical Appointment No-Shows</h3>
+              <p>Investigate appointment patterns and factors associated with missed visits, while considering the
+                limitations of observational data.</p>
+              <div class="tag-list"><span>pandas</span><span>Visualization</span><span>Statistics</span></div><span
+                class="project-status">Project write-up coming soon</span>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-art art-bikeshare">
+              <div class="art-label">04 / BUSINESS ANALYTICS</div>
+              <div class="bike-bars">
+                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="bike-baseline"></div>
+            </div>
+            <div class="project-content">
+              <div class="project-type">DATA VISUALIZATION <span>·</span> R</div>
+              <h3>Bike-Share Usage Patterns</h3>
+              <p>Analyze trip records to examine demand patterns across time and communicate findings that can inform
+                operations.</p>
+              <div class="tag-list"><span>R</span><span>Data wrangling</span><span>Visualization</span></div><span
+                class="project-status">Project write-up coming soon</span>
+            </div>
+          </article>
+        </div>
+        <p class="projects-note">Project descriptions are previews. Detailed reports, findings, and source-code links
+          will be added as each project is reviewed and prepared for publication.</p>
+      </div>
+    </section>
+
+    <section class="section skills-section" id="skills">
+      <div class="container skills-layout">
+        <div>
+          <p class="eyebrow">TOOLS & METHODS</p>
+          <h2>Built on curiosity.<br><span class="muted-heading">Grounded in analysis.</span></h2>
+          <p class="section-description">A practical toolkit for moving from raw data to analysis, models, and clear
+            communication.</p>
+        </div>
+        <div class="skill-groups">
+          <div class="skill-group"><span class="skill-number">01</span>
+            <div>
+              <h3>Languages & data</h3>
+              <p>Python · SQL · R · pandas · NumPy · PostgreSQL</p>
+            </div>
+          </div>
+          <div class="skill-group"><span class="skill-number">02</span>
+            <div>
+              <h3>Analytics & modeling</h3>
+              <p>Exploratory data analysis · Statistics · Data cleaning · Feature engineering · Classification ·
+                Clustering</p>
+            </div>
+          </div>
+          <div class="skill-group"><span class="skill-number">03</span>
+            <div>
+              <h3>Visualization & communication</h3>
+              <p>Matplotlib · Tableau · Power BI · Data storytelling · Analytical reporting</p>
+            </div>
+          </div>
+          <div class="skill-group"><span class="skill-number">04</span>
+            <div>
+              <h3>Development tools</h3>
+              <p>Jupyter · Git · GitHub · scikit-learn · FastAPI</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="container about-layout">
+        <div>
+          <p class="eyebrow">A LITTLE ABOUT ME</p>
+          <h2>Analysis with<br><span class="accent">purpose.</span></h2>
+        </div>
+        <div class="about-copy">
+          <p>I recently earned a Bachelor of Science in Data Analytics. My interests include using data to answer
+            practical questions, building and evaluating predictive models, and making analytical results understandable
+            to the people who use them.</p>
+          <p>My background also includes software development and mentoring, which has shaped how I approach
+            problem-solving: work methodically, explain decisions, and build solutions that others can understand and
+            maintain.</p><a class="text-link" href="https://github.com/jontaylor224" target="_blank"
+            rel="noopener noreferrer">Explore my GitHub repositories <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container contact-inner">
+        <div>
+          <p class="eyebrow">LET'S CONNECT</p>
+          <h2>Have a data challenge<br>in mind?</h2>
+          <p>I'm interested in connecting with teams working with data, analytics, and technology.</p>
+        </div><a class="button button-light" href="https://github.com/jontaylor224" target="_blank"
+          rel="noopener noreferrer">Find me on GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner"><span>© <span id="year">2026</span> Jon Taylor</span><span>Built with curiosity
+        and data.</span><a href="#home">Back to top ↑</a></div>
+  </footer>
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const links = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      links.classList.toggle('is-open', !expanded);
+    });
+    links.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      toggle.setAttribute('aria-expanded', 'false');
+      links.classList.remove('is-open');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
