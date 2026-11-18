@@ -1,0 +1,589 @@
+
+/* =========================================
+   Bank Marketing Prediction - Case Study
+   ========================================= */
+
+/* Hero */
+.case-hero {
+    padding: 5rem 0 4rem;
+}
+
+.case-hero h1 {
+    max-width: 850px;
+    margin: 1rem 0;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.08;
+}
+
+.case-intro {
+    max-width: 760px;
+    font-size: 1.15rem;
+    line-height: 1.75;
+    color: #cbd5e1;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: #93c5fd;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.case-tags,
+.case-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.case-tags span,
+.case-meta span {
+    padding: 0.4rem 0.8rem;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    color: #cbd5e1;
+}
+
+.case-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* General case-study sections */
+.case-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.case-section.case-alt {
+    background: rgba(30, 41, 59, 0.22);
+}
+
+.case-narrative {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.4fr);
+    gap: 3rem;
+}
+
+.case-section-heading h2,
+.section-heading h2 {
+    line-height: 1.2;
+}
+
+.case-copy {
+    color: #cbd5e1;
+    line-height: 1.8;
+}
+
+.case-copy p + p {
+    margin-top: 1rem;
+}
+
+.section-description {
+    max-width: 760px;
+    color: #94a3b8;
+    line-height: 1.7;
+}
+
+.muted {
+    color: #94a3b8;
+    line-height: 1.65;
+}
+
+/* Dataset statistics */
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.stat-card {
+    padding: 1.4rem;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 14px;
+    background: rgba(30, 41, 59, 0.5);
+}
+
+.stat-value {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 700;
+    color: #f8fafc;
+}
+
+.stat-label {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.dataset-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 2rem;
+    align-items: start;
+    margin-top: 2rem;
+}
+
+.insight-panel,
+.dataset-description {
+    padding: 1.5rem;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 14px;
+    background: rgba(30, 41, 59, 0.4);
+}
+
+.dataset-description {
+    color: #cbd5e1;
+    line-height: 1.75;
+}
+
+.distribution-bar {
+    display: flex;
+    height: 18px;
+    margin: 1.5rem 0 1rem;
+    overflow: hidden;
+    border-radius: 999px;
+    background: #334155;
+}
+
+.distribution-no {
+    width: 88.3%;
+    background: #64748b;
+}
+
+.distribution-yes {
+    width: 11.7%;
+    background: #60a5fa;
+}
+
+.distribution-legend {
+    display: grid;
+    gap: 0.6rem;
+    color: #cbd5e1;
+    font-size: 0.9rem;
+}
+
+.legend-no,
+.legend-yes {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+}
+
+.legend-no {
+    background: #64748b;
+}
+
+.legend-yes {
+    background: #60a5fa;
+}
+
+/* Exploratory findings */
+.finding-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin-top: 2rem;
+}
+
+.finding-card {
+    padding: 1.5rem;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 14px;
+    background: rgba(30, 41, 59, 0.4);
+}
+
+.finding-number {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: #60a5fa;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.finding-card h3 {
+    margin-top: 0;
+}
+
+.finding-card p,
+.finding-note {
+    color: #cbd5e1;
+    line-height: 1.7;
+}
+
+.finding-comparison {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 1.25rem 0;
+}
+
+.finding-highlight {
+    margin: 1.25rem 0;
+    color: #93c5fd;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.finding-note {
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+/* Modeling workflow */
+.workflow {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.workflow-step {
+    padding: 1.5rem;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 14px;
+    background: rgba(30, 41, 59, 0.4);
+}
+
+.workflow-step h3 {
+    margin-top: 0;
+}
+
+.workflow-step p {
+    color: #cbd5e1;
+    line-height: 1.7;
+}
+
+.prediction-note {
+    margin-top: 2rem;
+    padding: 1.25rem 1.5rem;
+    border-left: 3px solid #60a5fa;
+    border-radius: 0 10px 10px 0;
+    background: rgba(30, 41, 59, 0.5);
+    color: #cbd5e1;
+    line-height: 1.7;
+}
+
+/* Model results */
+.results-layout {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.75fr) minmax(0, 1.6fr);
+    gap: 1.5rem;
+    align-items: start;
+    margin-top: 2rem;
+}
+
+.results-summary,
+.comparison-panel {
+    padding: 1.5rem;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 14px;
+    background: rgba(30, 41, 59, 0.45);
+}
+
+.results-label {
+    color: #93c5fd;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.primary-metric {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin: 1.25rem 0;
+}
+
+.primary-metric strong {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #f8fafc;
+}
+
+.primary-metric span {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #f8fafc;
+}
+
+.metric-list {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.metric-list > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+    color: #cbd5e1;
+}
+
+.table-scroll {
+    width: 100%;
+    overflow-x: auto;
+    margin: 1.25rem 0;
+}
+
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+}
+
+.results-table th,
+.results-table td {
+    padding: 0.85rem 0.75rem;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+    text-align: left;
+    white-space: nowrap;
+}
+
+.results-table th {
+    color: #cbd5e1;
+    font-weight: 600;
+}
+
+.results-table td {
+    color: #e2e8f0;
+}
+
+.results-table .selected-row td {
+    background: rgba(96, 165, 250, 0.12);
+    color: #bfdbfe;
+}
+
+.table-note {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+/* Confusion matrix */
+.matrix-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 2rem;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.matrix-panel,
+.matrix-insights {
+    padding: 1.5rem;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 14px;
+    background: rgba(30, 41, 59, 0.4);
+}
+
+.matrix-axis-label {
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.matrix-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr 1fr;
+    gap: 0.5rem;
+    text-align: center;
+}
+
+.matrix-heading {
+    padding: 0.75rem 0.25rem;
+    color: #94a3b8;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.matrix-cell {
+    display: flex;
+    min-height: 90px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.75rem 0.25rem;
+    border-radius: 10px;
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.matrix-cell small {
+    font-size: 0.72rem;
+    font-weight: 400;
+}
+
+.true-negative {
+    background: rgba(34, 197, 94, 0.16);
+    color: #86efac;
+}
+
+.false-positive {
+    background: rgba(234, 179, 8, 0.14);
+    color: #fde68a;
+}
+
+.false-negative {
+    background: rgba(239, 68, 68, 0.14);
+    color: #fca5a5;
+}
+
+.true-positive {
+    background: rgba(96, 165, 250, 0.18);
+    color: #93c5fd;
+}
+
+.matrix-insights {
+    color: #cbd5e1;
+    line-height: 1.7;
+}
+
+/* Feature importance */
+.importance-panel {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 14px;
+    background: rgba(30, 41, 59, 0.4);
+}
+
+.importance-item {
+    display: grid;
+    grid-template-columns: 190px minmax(0, 1fr);
+    gap: 1rem;
+    align-items: center;
+}
+
+.importance-track {
+    height: 12px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: rgba(148, 163, 184, 0.18);
+}
+
+.importance-track i {
+    display: block;
+    width: var(--value);
+    height: 100%;
+    border-radius: inherit;
+    background: #60a5fa;
+}
+
+.importance-note {
+    margin-top: 1rem;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+/* Resources */
+.resources-panel {
+    padding: 2.5rem;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 16px;
+    background: rgba(30, 41, 59, 0.45);
+}
+
+.resources-panel h2 {
+    margin-top: 0.75rem;
+}
+
+.resources-panel .case-actions {
+    margin-top: 1.5rem;
+}
+
+/* Footer */
+.footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Responsive layouts */
+@media (max-width: 900px) {
+    .stat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .results-layout,
+    .matrix-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .case-narrative {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 650px) {
+    .case-hero {
+        padding: 3rem 0;
+    }
+
+    .case-section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .dataset-layout,
+    .finding-grid,
+    .workflow {
+        grid-template-columns: 1fr;
+    }
+
+    .importance-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .resources-panel {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .stat-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.65rem;
+    }
+
+    .stat-card {
+        padding: 1rem;
+    }
+
+    .stat-value {
+        font-size: 1.5rem;
+    }
+
+    .finding-comparison {
+        gap: 0.75rem;
+    }
+
+    .matrix-cell {
+        min-height: 75px;
+        font-size: 1.1rem;
+    }
+}

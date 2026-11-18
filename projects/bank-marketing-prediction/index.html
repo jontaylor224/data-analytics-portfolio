@@ -1,0 +1,744 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Bank Marketing Prediction: an exploratory data analysis and machine learning project examining term-deposit subscription behavior.">
+  <meta name="theme-color" content="#101827">
+
+  <title>Bank Marketing Prediction | Jon Taylor</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="project.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="../../index.html">
+        <span class="brand-mark">JT</span>
+        <span>Jon Taylor</span>
+      </a>
+
+      <button class="menu-toggle" type="button"
+        aria-expanded="false" aria-controls="nav-links"
+        aria-label="Toggle navigation">☰</button>
+
+      <div class="nav-links" id="nav-links">
+        <a href="../../index.html#projects">Projects</a>
+        <a href="../../index.html#skills">Skills</a>
+        <a href="../../index.html#about">About</a>
+        <a class="nav-cta"
+          href="https://github.com/jontaylor224/bank-marketing-prediction"
+          target="_blank" rel="noopener noreferrer">
+          GitHub <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Project introduction -->
+    <section class="case-hero">
+      <div class="container">
+        <a class="back-link" href="../../index.html#projects">
+          ← Back to projects
+        </a>
+
+        <p class="eyebrow">01 / PREDICTIVE ANALYTICS · PYTHON</p>
+
+        <h1>Bank Marketing <span>Prediction.</span></h1>
+
+        <p class="case-intro">
+          Can historical customer information and previous marketing
+          interactions help a bank identify customers more likely to
+          subscribe to a term deposit?
+        </p>
+
+        <div class="case-tags">
+          <span>Python</span>
+          <span>pandas</span>
+          <span>scikit-learn</span>
+          <span>Exploratory Data Analysis</span>
+          <span>Classification</span>
+        </div>
+
+        <div class="case-actions">
+          <a class="button button-primary"
+            href="https://github.com/jontaylor224/bank-marketing-prediction"
+            target="_blank" rel="noopener noreferrer">
+            View project on GitHub ↗
+          </a>
+
+          <a class="button button-secondary"
+            href="https://github.com/jontaylor224/bank-marketing-prediction/blob/main/notebooks/01_exploratory_data_analysis.ipynb"
+            target="_blank" rel="noopener noreferrer">
+            Explore EDA notebook ↗
+          </a>
+        </div>
+
+        <div class="case-meta">
+          <div>
+            <span>DATASET</span>
+            <strong>45,211 customers</strong>
+          </div>
+          <div>
+            <span>ANALYSIS</span>
+            <strong>EDA + Machine Learning</strong>
+          </div>
+          <div>
+            <span>FINAL MODEL</span>
+            <strong>Random Forest</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Business problem -->
+    <section class="section case-section">
+      <div class="container case-narrative">
+        <div class="case-section-heading">
+          <p class="eyebrow">01 / THE BUSINESS QUESTION</p>
+          <h2>Turning customer data into <span class="accent">better outreach decisions.</span></h2>
+        </div>
+
+        <div class="case-copy">
+          <p>
+            Banks conduct marketing campaigns to encourage customers to
+            subscribe to term-deposit products. Contacting every customer
+            requires time and resources, while many customers will not
+            subscribe.
+          </p>
+
+          <p>
+            This project investigates whether customer characteristics
+            and historical campaign interactions can help identify
+            potential subscribers and prioritize marketing outreach.
+          </p>
+
+          <p>
+            The goal is not to automate marketing decisions, but to
+            evaluate whether predictive modeling can provide useful
+            information for allocating outreach resources.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dataset -->
+    <section class="section case-section case-alt">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">02 / THE DATA</p>
+            <h2>Understanding the dataset<span class="accent">.</span></h2>
+          </div>
+
+          <p class="section-description">
+            The analysis uses the Bank Marketing dataset from the
+            UCI Machine Learning Repository.
+          </p>
+        </div>
+
+        <div class="stat-grid">
+          <article class="stat-card">
+            <span class="stat-value">45,211</span>
+            <span class="stat-label">Customer records</span>
+          </article>
+
+          <article class="stat-card">
+            <span class="stat-value">16</span>
+            <span class="stat-label">Input variables</span>
+          </article>
+
+          <article class="stat-card">
+            <span class="stat-value">17</span>
+            <span class="stat-label">Total columns, including target</span>
+          </article>
+
+          <article class="stat-card">
+            <span class="stat-value">11.7%</span>
+            <span class="stat-label">Subscribed to a term deposit</span>
+          </article>
+        </div>
+
+        <div class="dataset-layout">
+          <div class="insight-panel">
+            <h3>Target distribution</h3>
+            <p class="muted">
+              The target variable indicates whether a customer subscribed
+              to a term deposit.
+            </p>
+
+            <div class="distribution-bar" role="img"
+              aria-label="88.3 percent did not subscribe and 11.7 percent subscribed">
+              <span class="distribution-no"></span>
+              <span class="distribution-yes"></span>
+            </div>
+
+            <div class="distribution-legend">
+              <span><i class="legend-no"></i> No subscription: 39,922 (88.3%)</span>
+              <span><i class="legend-yes"></i> Subscription: 5,289 (11.7%)</span>
+            </div>
+          </div>
+
+          <div class="dataset-description">
+            <h3>Source and attribution</h3>
+            <p>
+              <a href="https://archive.ics.uci.edu/dataset/222/bank+marketing"
+                target="_blank" rel="noopener noreferrer">
+                UCI Machine Learning Repository — Bank Marketing ↗
+              </a>
+            </p>
+            <p>
+              Authors: Sérgio Moro, Paulo Rita, and Paulo Cortez (2014).
+            </p>
+            <p>
+              DOI:
+              <a href="https://doi.org/10.24432/C5K306"
+                target="_blank" rel="noopener noreferrer">
+                10.24432/C5K306 ↗
+              </a>
+            </p>
+            <p>
+              License: Creative Commons Attribution 4.0 International
+              (CC BY 4.0).
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDA findings -->
+    <section class="section case-section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">03 / EXPLORATORY DATA ANALYSIS</p>
+            <h2>What the data revealed<span class="accent">.</span></h2>
+          </div>
+
+          <p class="section-description">
+            Exploratory analysis examined customer characteristics,
+            previous campaign activity, contact methods, and subscription
+            rates.
+          </p>
+        </div>
+
+        <div class="finding-grid">
+
+          <article class="finding-card">
+            <span class="finding-number">01</span>
+            <h3>Previous contact matters</h3>
+            <p>
+              Customers with previous campaign contact had a higher
+              subscription rate than customers with no previous contact.
+            </p>
+            <div class="finding-comparison finding-highlight">
+              <div>
+                <strong>23.07%</strong>
+                <span>Previously contacted</span>
+              </div>
+              <div>
+                <strong>9.16%</strong>
+                <span>Never previously contacted</span>
+              </div>
+            </div>
+            <p class="finding-note">
+              An observed association, not evidence that previous contact
+              caused a subscription.
+            </p>
+          </article>
+
+          <article class="finding-card">
+            <span class="finding-number">02</span>
+            <h3>Previous campaign outcomes</h3>
+            <p>
+              Subscription rates varied considerably by the outcome of
+              the previous campaign.
+            </p>
+            <div class="finding-highlight">
+              <strong>64.73%</strong>
+              <span>Subscription rate following a previous successful campaign</span>
+            </div>
+            <p class="finding-note">
+              Historical campaign success was strongly associated with
+              subsequent subscription behavior.
+            </p>
+          </article>
+
+          <article class="finding-card">
+            <span class="finding-number">03</span>
+            <h3>Contact timing varies</h3>
+            <p>
+              Subscription rates differed across months. March, December,
+              September, and October had some of the highest observed rates.
+            </p>
+            <div class="finding-highlight">
+              <strong>51.99%</strong>
+              <span>March subscription rate</span>
+            </div>
+            <p class="finding-note">
+              Monthly differences may reflect historical targeting
+              practices and sample sizes, not necessarily seasonality.
+            </p>
+          </article>
+
+          <article class="finding-card">
+            <span class="finding-number">04</span>
+            <h3>Class imbalance</h3>
+            <p>
+              Only 11.7% of customers subscribed. A model that predicts
+              every customer as a non-subscriber would still achieve
+              88.3% accuracy.
+            </p>
+            <div class="finding-highlight">
+              <strong>88.3%</strong>
+              <span>Majority-class baseline accuracy</span>
+            </div>
+            <p class="finding-note">
+              This makes precision, recall, F1, and ranking metrics
+              important for model evaluation.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Methodology -->
+    <section class="section case-section case-alt">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">04 / MODEL DEVELOPMENT</p>
+            <h2>A leakage-aware modeling workflow<span class="accent">.</span></h2>
+          </div>
+
+          <p class="section-description">
+            The modeling process emphasized appropriate prediction timing,
+            reproducible preprocessing, and evaluation beyond accuracy.
+          </p>
+        </div>
+
+        <div class="workflow">
+          <article class="workflow-step">
+            <span>01</span>
+            <div>
+              <h3>Prepare the data</h3>
+              <p>
+                Separate predictors and target, examine feature types,
+                and create stratified training, validation, and test sets.
+              </p>
+            </div>
+          </article>
+
+          <article class="workflow-step">
+            <span>02</span>
+            <div>
+              <h3>Prevent target leakage</h3>
+              <p>
+                Exclude <code>duration</code>, because call duration is
+                only known after the current call. Represent prior
+                campaign contact history with engineered features.
+              </p>
+            </div>
+          </article>
+
+          <article class="workflow-step">
+            <span>03</span>
+            <div>
+              <h3>Build preprocessing pipelines</h3>
+              <p>
+                Apply standardization to numerical features for Logistic
+                Regression and one-hot encoding to categorical features.
+                Use scikit-learn pipelines to keep preprocessing within
+                model training.
+              </p>
+            </div>
+          </article>
+
+          <article class="workflow-step">
+            <span>04</span>
+            <div>
+              <h3>Compare classification models</h3>
+              <p>
+                Evaluate a majority-class baseline, Logistic Regression,
+                and Random Forest using metrics appropriate for
+                an imbalanced target.
+              </p>
+            </div>
+          </article>
+
+          <article class="workflow-step">
+            <span>05</span>
+            <div>
+              <h3>Tune the decision threshold</h3>
+              <p>
+                Compare precision and recall at multiple thresholds
+                using validation data, then evaluate the selected
+                thresholds on the held-out test set.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <div class="prediction-note">
+          <strong>Prediction-time consideration</strong>
+          <p>
+            The model is designed for pre-call prioritization. The
+            <code>campaign</code> feature was transformed into
+            <code>contacts_before_current_call</code> by subtracting one,
+            under the assumption that the source count includes the
+            current call.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Model results -->
+    <section class="section case-section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">05 / MODEL RESULTS</p>
+            <h2>Evaluating predictive performance<span class="accent">.</span></h2>
+          </div>
+
+          <p class="section-description">
+            Random Forest with a 0.40 classification threshold achieved
+            the highest F1 score among the configurations tested.
+          </p>
+        </div>
+
+        <div class="results-layout">
+          <div class="results-summary">
+            <span class="results-label">SELECTED MODEL</span>
+            <h3>Random Forest</h3>
+            <p>
+              Classification threshold
+              <strong>0.40</strong>
+            </p>
+
+            <div class="primary-metric">
+              <strong>47.73%</strong>
+              <span>F1 score on held-out test data</span>
+            </div>
+
+            <div class="metric-list">
+              <div><span>Precision</span><strong>45.05%</strong></div>
+              <div><span>Recall</span><strong>50.76%</strong></div>
+              <div><span>Accuracy</span><strong>87.00%</strong></div>
+              <div><span>ROC-AUC</span><strong>80.28%</strong></div>
+              <div><span>Average Precision</span><strong>45.20%</strong></div>
+            </div>
+          </div>
+
+          <div class="comparison-panel">
+            <h3>Model comparison</h3>
+            <p class="muted">
+              Held-out test-set results. Thresholds were selected
+              using validation data.
+            </p>
+
+            <div class="table-scroll">
+              <table class="results-table">
+                <thead>
+                  <tr>
+                    <th>Model</th>
+                    <th>Threshold</th>
+                    <th>Precision</th>
+                    <th>Recall</th>
+                    <th>F1</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Logistic Regression</td>
+                    <td>0.50</td>
+                    <td>26.71%</td>
+                    <td>62.38%</td>
+                    <td>37.40%</td>
+                  </tr>
+                  <tr>
+                    <td>Logistic Regression</td>
+                    <td>0.65</td>
+                    <td>46.28%</td>
+                    <td>43.48%</td>
+                    <td>44.83%</td>
+                  </tr>
+                  <tr>
+                    <td>Random Forest</td>
+                    <td>0.50</td>
+                    <td>51.55%</td>
+                    <td>39.22%</td>
+                    <td>44.55%</td>
+                  </tr>
+                  <tr class="selected-row">
+                    <td>Random Forest</td>
+                    <td>0.40</td>
+                    <td>45.05%</td>
+                    <td>50.76%</td>
+                    <td>47.73%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p class="table-note">
+              The selected model provides the strongest F1 balance
+              among the tested configurations, rather than the
+              highest precision or recall individually.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Confusion matrix -->
+    <section class="section case-section case-alt">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">06 / PREDICTION OUTCOMES</p>
+            <h2>What the model gets right<span class="accent">.</span></h2>
+          </div>
+
+          <p class="section-description">
+            The confusion matrix shows how the selected model performed
+            across actual and predicted subscription outcomes.
+          </p>
+        </div>
+
+        <div class="matrix-layout">
+          <div class="matrix-panel">
+            <p class="matrix-axis-label">Predicted class</p>
+
+            <div class="matrix-grid">
+              <div class="matrix-corner"></div>
+              <div class="matrix-heading">No</div>
+              <div class="matrix-heading">Yes</div>
+
+              <div class="matrix-heading">Actual No</div>
+              <div class="matrix-cell true-negative">
+                <strong>7,330</strong>
+                <span>True negatives</span>
+              </div>
+              <div class="matrix-cell false-positive">
+                <strong>655</strong>
+                <span>False positives</span>
+              </div>
+
+              <div class="matrix-heading">Actual Yes</div>
+              <div class="matrix-cell false-negative">
+                <strong>521</strong>
+                <span>False negatives</span>
+              </div>
+              <div class="matrix-cell true-positive">
+                <strong>537</strong>
+                <span>True positives</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="matrix-insights">
+            <article>
+              <strong>537</strong>
+              <span>Actual subscribers correctly identified</span>
+            </article>
+            <article>
+              <strong>521</strong>
+              <span>Actual subscribers missed by the model</span>
+            </article>
+            <article>
+              <strong>1,192</strong>
+              <span>Customers identified as potential subscribers</span>
+            </article>
+            <p class="muted">
+              Of the 1,192 customers predicted to subscribe,
+              537 actually subscribed. These results describe
+              historical predictions, not the causal impact of
+              a new marketing strategy.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature importance -->
+    <section class="section case-section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">07 / MODEL INTERPRETATION</p>
+            <h2>Which features contributed most?<span class="accent">.</span></h2>
+          </div>
+
+          <p class="section-description">
+            Permutation importance measured the decline in average
+            precision when each feature was shuffled.
+          </p>
+        </div>
+
+        <div class="importance-panel">
+          <div class="importance-item">
+            <div><span>Month</span><strong>0.1086</strong></div>
+            <div class="importance-track"><i style="--value:100%"></i></div>
+          </div>
+          <div class="importance-item">
+            <div><span>Contact method</span><strong>0.0928</strong></div>
+            <div class="importance-track"><i style="--value:85.4%"></i></div>
+          </div>
+          <div class="importance-item">
+            <div><span>Previous campaign outcome</span><strong>0.0749</strong></div>
+            <div class="importance-track"><i style="--value:69%"></i></div>
+          </div>
+          <div class="importance-item">
+            <div><span>Housing loan status</span><strong>0.0358</strong></div>
+            <div class="importance-track"><i style="--value:33%"></i></div>
+          </div>
+          <div class="importance-item">
+            <div><span>Days since previous contact</span><strong>0.0317</strong></div>
+            <div class="importance-track"><i style="--value:29.2%"></i></div>
+          </div>
+          <div class="importance-item">
+            <div><span>Day of month</span><strong>0.0278</strong></div>
+            <div class="importance-track"><i style="--value:25.6%"></i></div>
+          </div>
+        </div>
+
+        <p class="importance-note">
+          Importance values represent mean decreases in average
+          precision. They are not percentages and should not be
+          interpreted as causal effects. Correlated features can
+          share predictive information.
+        </p>
+      </div>
+    </section>
+
+    <!-- Recommendations and limitations -->
+    <section class="section case-section case-alt">
+      <div class="container case-narrative">
+        <div class="case-section-heading">
+          <p class="eyebrow">08 / BUSINESS IMPLICATIONS</p>
+          <h2>From model output to <span class="accent">actionable questions.</span></h2>
+        </div>
+
+        <div class="case-copy">
+          <h3>Recommendations</h3>
+          <ul>
+            <li>
+              Use predicted probabilities to help prioritize customers
+              for marketing outreach.
+            </li>
+            <li>
+              Investigate differences in subscription rates across
+              contact months and communication channels.
+            </li>
+            <li>
+              Consider previous campaign outcomes when evaluating
+              follow-up opportunities.
+            </li>
+            <li>
+              Select classification thresholds based on outreach
+              capacity, acquisition costs, and expected subscription value.
+            </li>
+          </ul>
+
+          <h3>Limitations</h3>
+          <ul>
+            <li>
+              Historical campaign data may not reflect current
+              customer behavior or marketing effectiveness.
+            </li>
+            <li>
+              Predictive associations do not establish causation.
+            </li>
+            <li>
+              The selected F1 threshold does not necessarily maximize
+              financial return.
+            </li>
+            <li>
+              The model should be validated on newer campaigns and
+              reviewed for fairness before operational use.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project resources -->
+    <section class="section case-section">
+      <div class="container resources-panel">
+        <p class="eyebrow">EXPLORE THE WORK</p>
+        <h2>Review the analysis<span class="accent">.</span></h2>
+        <p>
+          The complete notebooks, source code, setup instructions,
+          and dataset attribution are available in the project repository.
+        </p>
+
+        <div class="case-actions">
+          <a class="button button-primary"
+            href="https://github.com/jontaylor224/bank-marketing-prediction"
+            target="_blank" rel="noopener noreferrer">
+            GitHub repository ↗
+          </a>
+
+          <a class="button button-secondary"
+            href="https://github.com/jontaylor224/bank-marketing-prediction/blob/main/notebooks/01_exploratory_data_analysis.ipynb"
+            target="_blank" rel="noopener noreferrer">
+            EDA notebook ↗
+          </a>
+
+          <a class="button button-secondary"
+            href="https://github.com/jontaylor224/bank-marketing-prediction/blob/main/notebooks/02_model_development.ipynb"
+            target="_blank" rel="noopener noreferrer">
+            Modeling notebook ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span id="year">2026</span> Jon Taylor</span>
+      <span>Built with curiosity and data.</span>
+      <a href="../../index.html">Portfolio home ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const links = document.querySelector('.nav-links');
+
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      links.classList.toggle('is-open', !expanded);
+    });
+
+    links.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        toggle.setAttribute('aria-expanded', 'false');
+        links.classList.remove('is-open');
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
